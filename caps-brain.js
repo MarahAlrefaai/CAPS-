@@ -7,7 +7,7 @@ const payload=require('./apps/add_obj.js');
 //-----------------------------------------
 setInterval(() => {
   eventEmitter.emit('pickup',payload);
-}, 5000);
+}, 1000);
 //-----------------------------------------
 setInterval(() => {
   eventEmitter.emit('in-transit',payload);
@@ -15,4 +15,4 @@ setInterval(() => {
 //-----------------------------------------
 setInterval(() => {
   eventEmitter.emit('delivered',payload);
-}, 3000);
+}, 1000);
