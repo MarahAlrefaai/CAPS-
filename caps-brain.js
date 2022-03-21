@@ -2,17 +2,21 @@
 
 const eventEmitter =require('./lib/events-pool');
 const driver =require('./apps/driver.js');
-const payload=require('./apps/add_obj.js');
-
+const {faker}=require('@faker-js/faker');
+const date = new Date();
+//let payload=require('./apps/add_obj.js');
 //-----------------------------------------
 setInterval(() => {
-  eventEmitter.emit('pickup',payload);
-}, 1000);
+ 
+  eventEmitter.emit('pickup',{ event:"" ,
+  time: date.toString(),
+  payload : 
+ {
+    store: "sweet store",
+    orderId: 	faker.datatype.uuid(),
+    customer:  faker.name.findName(),
+    address: faker.address.city()
+  }});
+ 
+}, 5000);
 //-----------------------------------------
-setInterval(() => {
-  eventEmitter.emit('in-transit',payload);
-}, 1000);
-//-----------------------------------------
-setInterval(() => {
-  eventEmitter.emit('delivered',payload);
-}, 1000);
