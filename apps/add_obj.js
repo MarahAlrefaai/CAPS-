@@ -1,12 +1,11 @@
 'use strict'
 
-const vendor=require('./vendor');
-
 function  createpayload (){
+  //const vendor=require('./vendor');
   const date = new Date();
   const obj={ event:"" ,
   time: date.toString(),
-  payload : vendor
+  payload : require('./vendor')
 } 
 return  obj; }
 
